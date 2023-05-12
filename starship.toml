@@ -1,11 +1,1 @@
-add_newline = true
-
-format = '''
-[](bold green)$directory$git_branch
-[>](bold white) '''
-
-[character]
-success_symbol = '[$](bold pink)'
-
-[package]
-disabled = true
+/Users/nick/.config/starship.toml
