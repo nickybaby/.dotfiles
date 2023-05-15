@@ -5,9 +5,9 @@ lsp.preset('recommended')
 lsp.ensure_installed({
 	'tsserver',
 	'eslint',
-	'sumneko_lua',
+	'lua_ls',
 	'pyright',
-    'fsautocomplete'
+    'fsautocomplete',
 })
 
 local cmp = require('cmp')

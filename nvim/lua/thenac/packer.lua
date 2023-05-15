@@ -6,7 +6,7 @@ vim.cmd.packadd('packer.nvim')
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
-  use 'sam4llis/nvim-tundra' -- packer.nvim
+  use 'Mofiqul/dracula.nvim'
   use({
     "aserowy/tmux.nvim",
     config = function() require("tmux").setup() end
@@ -16,6 +16,7 @@ return require('packer').startup(function(use)
 	  -- or                            , branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
+  use ({ 'jose-elias-alvarez/null-ls.nvim' })
   --use 'sam4llis/nvim-tundra' -- packer.nvim
   use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
   use('nvim-treesitter/playground')
