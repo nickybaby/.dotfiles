@@ -1,4 +1,5 @@
 local lsp = require('lsp-zero')
+local lspconfig = require('lspconfig')
 
 lsp.preset('recommended')
 
@@ -6,9 +7,10 @@ lsp.ensure_installed({
 	'tsserver',
 	'eslint',
 	'lua_ls',
-	'pyright',
-    'fsautocomplete',
+	'pyright'
 })
+
+lspconfig.fsautocomplete.setup{}
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
@@ -24,7 +26,7 @@ lsp.setup_nvim_cmp({
 })
 
 lsp.on_attach(function(client, bufnr)
-	local opts = {buffer = bufnr, remap = false}
+  lsp.default_keymaps({buffer = bufnr})
 
   vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
   vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)

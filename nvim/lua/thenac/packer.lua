@@ -16,6 +16,13 @@ return require('packer').startup(function(use)
 	  -- or                            , branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
+  use({
+    'adelarsq/neofsharp.vim',
+    config = function()
+      vim.api.nvim_command('autocmd BufNewFile,BufRead *.fs,*.fsx,*.fsi,*.fsl,*.fsy set filetype=fsharp')
+      vim.api.nvim_command('autocmd BufNewFile,BufRead *.fsproj,*.csproj,*.vbproj,*.cproj,*.proj set filetype=xml')
+    end
+  })
   use ({ 'jose-elias-alvarez/null-ls.nvim' })
   --use 'sam4llis/nvim-tundra' -- packer.nvim
   use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
